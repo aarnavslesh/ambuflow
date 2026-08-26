@@ -102,8 +102,11 @@ export const DEMO_SIGNALS: Signal[] = [
   { id: 'C-cross', intersectionId: 'C', onAmbulanceRoute: false, position: { x: 84, y: 63 }, state: 'green' },
 ];
 
+// One task per junction. The id suffix IS the intersection id (task-C -> C): the
+// store auto-clears a task when the ambulance passes that junction, so a task's
+// location must sit on the junction its id names.
 export const DEMO_POLICE_TASKS: PoliceTask[] = [
   { id: 'task-A', title: 'Clear Junction A for ambulance', location: { x: 45, y: 60 }, status: 'pending' },
   { id: 'task-B', title: 'Hold cross-traffic at Junction B', location: { x: 70, y: 35 }, status: 'pending' },
-  { id: 'task-C', title: 'Escort at hospital approach', location: { x: 88, y: 40 }, status: 'pending' },
+  { id: 'task-C', title: 'Clear Junction C for ambulance', location: { x: 88, y: 60 }, status: 'pending' },
 ];
